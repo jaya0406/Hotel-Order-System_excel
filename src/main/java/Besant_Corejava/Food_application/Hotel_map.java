@@ -20,10 +20,10 @@ public class Hotel_map {
 	    protected boolean isitem=false;
 	    protected String user_hotel = new String();
 	    protected String user_item=new String();
-		protected int user_quantity;
-		protected double amount;
-		protected double total_amount;
-		protected double Discount_rate;
+	    protected int user_quantity;
+	    protected double amount;
+	    protected double total_amount;
+	    protected double Discount_rate;
 	    
 	   // List<String> get_food = new ArrayList<String>();
 	    Map<String,Integer> Food_menu = new TreeMap<>();
