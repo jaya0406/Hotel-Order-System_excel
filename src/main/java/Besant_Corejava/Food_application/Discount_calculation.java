@@ -35,14 +35,7 @@ public class Discount_calculation extends Get_order_map{
 				Discount_rate = amount * 0.15;
 				total_amount =amount - Discount_rate;
 			}
-
-			else
-			{
-				System.out.print("Discount not applied");
-			}
-			
-		}
-		
+		}	
 	}
 	
 
