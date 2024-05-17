@@ -1,22 +1,17 @@
 package Besant_Corejava.Food_application;
-
 import java.io.File;
 import java.io.FileInputStream;
-
 import java.io.IOException;
 import java.util.Scanner;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
-
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
-
-public class Hotel extends Thread {
-	
+public class Hotel extends Thread
+	{
 	Scanner s = new Scanner(System.in);
 	String filepath=System.getProperty("user.dir")+"\\input\\Java_Hotel_assingment.xlsx";
 	protected String user_hotel= new String();
@@ -49,12 +44,10 @@ public class Hotel extends Thread {
 				isthere = true;
 				System.out.println("Welcome to Hotel "+ user_hotel.toUpperCase()+" !!");
 				System.out.println("Menu:\n-----");
-				
 				for(Row row : sheet)
 				{
 					 Foodcell = row.getCell(0);
 					 Pricecell = row.getCell(1);
-					
 					if(Foodcell!= null && Foodcell.getCellType()==CellType.STRING)
 					{
 						if(Pricecell!=null && Pricecell.getCellType()==CellType.NUMERIC)
@@ -77,7 +70,6 @@ public class Hotel extends Thread {
 			System.out.println("Error: Hotel name not found.");
 			return;
 		}
-		
 	}
 	
 	public void run()
