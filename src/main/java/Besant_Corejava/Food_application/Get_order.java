@@ -1,6 +1,4 @@
 package Besant_Corejava.Food_application;
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,7 +6,6 @@ import java.io.IOException;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 
 public class Get_order extends Hotel{
 	protected boolean isitem=false;
@@ -23,13 +20,11 @@ public class Get_order extends Hotel{
 			
 		for(int sheetcount = 0 ;sheetcount<wbk.getNumberOfSheets();sheetcount++)
 		{
-			sheet = wbk.getSheetAt(sheetcount);
-				 
+			sheet = wbk.getSheetAt(sheetcount);	 
 			if (user_hotel.equalsIgnoreCase(sheet.getSheetName())) 
 			{
 				System.out.print("\nEnter Item: ");
-			        user_item = s.nextLine();
-			            
+			        user_item = s.nextLine();            
 	        for (Row row : sheet)
 	        {
 	                Foodcell = row.getCell(0);
