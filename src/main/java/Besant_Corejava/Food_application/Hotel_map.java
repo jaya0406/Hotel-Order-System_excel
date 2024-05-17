@@ -20,6 +20,7 @@ public class Hotel_map {
 	    protected boolean isitem=false;
 	    protected String user_hotel = new String();
 	    protected String user_item=new String();
+
 		protected int user_quantity;
 		protected double amount;
 		protected double total_amount;
@@ -30,6 +31,9 @@ public class Hotel_map {
         Cell pricecell;
         Sheet sheet;
         Row row;
+
+	    
+
 	   // List<String> get_food = new ArrayList<String>();
 	    Map<String,Integer> Food_menu = new TreeMap<>();
 	    //List<Integer> get_price = new ArrayList<Integer>();
