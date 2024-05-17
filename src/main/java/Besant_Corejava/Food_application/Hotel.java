@@ -25,6 +25,9 @@ public class Hotel extends Thread {
 	protected double Price;
 	protected String user_item=new String();
 	protected int user_quantity;
+	Cell Foodcell;
+	Cell Pricecell;
+	Sheet sheet ;
 	
 	public void search_hotel() throws IOException
 	{
@@ -40,7 +43,7 @@ public class Hotel extends Thread {
 		
 		for(int sheetcount = 0 ;sheetcount<wbk.getNumberOfSheets();sheetcount++)
 		{
-			Sheet sheet = wbk.getSheetAt(sheetcount);
+			 sheet = wbk.getSheetAt(sheetcount);
 			if(user_hotel.equalsIgnoreCase(sheet.getSheetName()))
 			{
 				isthere = true;
@@ -49,8 +52,8 @@ public class Hotel extends Thread {
 				
 				for(Row row : sheet)
 				{
-					Cell Foodcell = row.getCell(0);
-					Cell Pricecell = row.getCell(1);
+					 Foodcell = row.getCell(0);
+					 Pricecell = row.getCell(1);
 					
 					if(Foodcell!= null && Foodcell.getCellType()==CellType.STRING)
 					{

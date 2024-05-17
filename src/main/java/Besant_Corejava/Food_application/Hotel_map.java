@@ -15,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Hotel_map {
 
 	    protected Scanner s = new Scanner(System.in);
-	    protected String filepath = System.getProperty("user.dir") + "\\Input_1\\Java_Hotel_assingment.xlsx";
+	    protected String filepath = System.getProperty("user.dir") + "\\input\\Java_Hotel_assingment.xlsx";
 	    protected boolean isthere=false;
 	    protected boolean isitem=false;
 	    protected String user_hotel = new String();
@@ -24,7 +24,12 @@ public class Hotel_map {
 		protected double amount;
 		protected double total_amount;
 		protected double Discount_rate;
-	    
+		String foodItem;
+		int price;
+		Cell foodcell;
+        Cell pricecell;
+        Sheet sheet;
+        Row row;
 	   // List<String> get_food = new ArrayList<String>();
 	    Map<String,Integer> Food_menu = new TreeMap<>();
 	    //List<Integer> get_price = new ArrayList<Integer>();
@@ -42,24 +47,24 @@ public void get_hotel() throws IOException, InterruptedException
 	        
 	 for (int sheet_count = 0; sheet_count < wbk.getNumberOfSheets(); sheet_count++)
 	 {
-	   Sheet sheet = wbk.getSheetAt(sheet_count);
+	   sheet = wbk.getSheetAt(sheet_count);
 	   if (user_hotel.equalsIgnoreCase(sheet.getSheetName()))
 	      {
 	          isthere=true;
 	           for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) 
 	              	{ // first row is the header
-	                   Row row = sheet.getRow(rowIndex);
+	                   row = sheet.getRow(rowIndex);
 	                   if (row != null) 
 	                    {
-	                       Cell foodcell = row.getCell(0);
-	                       Cell pricecell = row.getCell(1);
+	                        foodcell = row.getCell(0);
+	                        pricecell = row.getCell(1);
 	                        
 	                        if (foodcell != null && foodcell.getCellType() == CellType.STRING) 
 	                        {
 	                        	if(pricecell!=null && pricecell.getCellType()==CellType.NUMERIC)
 	                        	{
-	                        		String foodItem = foodcell.getStringCellValue();
-	                                int price = (int) pricecell.getNumericCellValue();
+	                        		foodItem = foodcell.getStringCellValue();
+	                        		price = (int) pricecell.getNumericCellValue();
 	                                Food_menu.put(foodItem,price);
 	                        	}
 	                        }
