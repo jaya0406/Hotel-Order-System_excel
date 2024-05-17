@@ -17,7 +17,6 @@ public class Get_order extends Hotel{
 		search_hotel();
 		if(super.isthere==true)
 		{
-		
 			File f = new File(filepath);
 			FileInputStream fis = new FileInputStream(f);
 			XSSFWorkbook wbk = new XSSFWorkbook(fis);
@@ -68,8 +67,6 @@ public class Get_order extends Hotel{
 			System.out.println("Error: Item not found.");
 			return;
 		}
-		
-
 	}
 
 	public static void main(String[] args) throws IOException
